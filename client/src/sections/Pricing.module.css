@@ -1,0 +1,116 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 72px 0 0;
+}
+
+.item,
+.revealFill {
+  display: flex;
+  height: 100%;
+}
+
+.revealFill {
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+/* Featured card: animated rotating gradient border */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.featured {
+  border: 1px solid transparent;
+  background: linear-gradient(180deg, #16163a, #0e0e28) padding-box,
+    conic-gradient(from var(--angle), #8b7bff, #4d7cff, #ffb38a, #8b7bff) border-box;
+  animation: rotate 6s linear infinite;
+  box-shadow: 0 30px 80px -30px rgba(139, 123, 255, 0.7);
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.tag {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--grad-btn);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.price {
+  margin-top: 18px;
+  font-size: clamp(2.25rem, 3.4vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.featured .price {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.note {
+  margin-top: 8px;
+  color: var(--text-soft);
+  font-size: 0.9375rem;
+}
+
+.features {
+  list-style: none;
+  padding: 24px 0 0;
+  margin: 24px 0 32px;
+  border-top: 1px solid var(--border);
+  display: grid;
+  gap: 12px;
+  flex: 1;
+  align-content: start;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9375rem;
+}
+
+.features svg {
+  flex: none;
+  color: var(--mint);
+}
+
+.cta {
+  width: 100%;
+}

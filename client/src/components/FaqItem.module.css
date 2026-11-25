@@ -1,0 +1,69 @@
+.item {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.025);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.item + .item {
+  margin-top: 10px;
+}
+
+.item:hover {
+  border-color: var(--border-2);
+}
+
+.open {
+  background: rgba(139, 123, 255, 0.07);
+  border-color: rgba(139, 123, 255, 0.35);
+}
+
+.q {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+.q button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  min-height: 68px;
+  padding: 14px 16px 14px 22px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border-2);
+  color: var(--text-soft);
+}
+
+.open .icon {
+  background: var(--grad-btn);
+  border-color: transparent;
+  color: #fff;
+}
+
+.panel {
+  overflow: hidden;
+}
+
+.a {
+  padding: 0 64px 22px 22px;
+  color: var(--text-soft);
+}

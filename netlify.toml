@@ -1,0 +1,18 @@
+# Netlify: builds the React app and forwards /api to the Express API on Render.
+[build]
+  base = "client"
+  command = "npm run build"
+  publish = "dist"
+
+# Replace YOUR-API with your Render service name
+[[redirects]]
+  from = "/api/*"
+  to = "https://YOUR-API.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+# Single-page app: every other path loads index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

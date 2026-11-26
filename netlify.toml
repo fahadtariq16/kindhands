@@ -1,13 +1,14 @@
-# Netlify: builds the React app and forwards /api to the Express API on Render.
+# Netlify: builds the React app. API forwarding lives in client/public/_redirects.
 [build]
   base = "client"
-  command = "npm run build"
+  # Install the whole workspace from the repo root (includes TypeScript), then build the client.
+  command = "cd .. && npm ci --include=dev && npm run build -w client"
   publish = "dist"
 
 # Replace YOUR-API with your Render service name
 [[redirects]]
   from = "/api/*"
-  to = "https://YOUR-API.onrender.com/api/:splat"
+  to = "https://kindhands-api.onrender.com/api/:splat"
   status = 200
   force = true
 
